@@ -3,32 +3,71 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+import PhoneIcon from '@mui/icons-material/Phone';
 
 export default function Head2() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static"
-      sx={{
-          backgroundColor: '#2E3B55', // ✅ Custom background color
-        }}
-      >
-        <Toolbar 
-        sx={{minHeight:700}}
+      <AppBar position="static" sx={{ backgroundColor: '#f1f2f5' }}>
+        <Toolbar
+          sx={{
+            py: 1, // Top and Bottom padding = 0.5rem
+            px: 3,
+            minHeight: 'auto',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+          }}
         >
-          <Box
-      component="img"
-      src="/your-image.jpg" // Replace with actual path or URL
-      alt="Sample"
-      sx={{ width: 300, height: 'auto', borderRadius: 2 }}
-    />
-          <box>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            National Security Service
-          </Typography>
-           <Typography variant="text" component="div" sx={{ flexGrow: 1 }}>
-            Your Trusted Security Partner
-          </Typography>
-          </box>
+          {/* Left Section - Logo + Title */}
+          <Box display="flex" alignItems="flex-start">
+            <Box
+              component="img"
+              src="/your-image.jpg" // Replace with actual image
+              alt="Sample"
+              sx={{ width: 120, height: 'auto', borderRadius: 2, mr: 2 }}
+            />
+            <Box>
+              <Typography
+                variant="h1"
+                component="h1"
+                sx={{
+                  color: '#023389ff',
+                  fontSize: '2rem',
+                  fontWeight: 600,
+                  lineHeight: 1.2,
+                }}
+              >
+                National Security Service
+              </Typography>
+              <Typography
+                variant="h6"
+                component="h6"
+                sx={{
+                  color: '#6c757d',
+                  fontSize: '1rem',
+                  mt: 0, // No top margin
+                }}
+              >
+                Your Trusted Security Partner
+              </Typography>
+            </Box>
+          </Box>
+
+          {/* Right Section - Phone Numbers */}
+          <Box textAlign="right">
+            <Stack spacing={0.5} alignItems="flex-end">
+              {['+91 98765 43210', '+91 91234 56789'].map((number, index) => (
+                <Stack direction="row" spacing={1} alignItems="center" key={index}>
+                  <PhoneIcon sx={{ color: '#021c48', fontSize: 20 }} />
+                  <Typography sx={{ fontSize: '16px', color: '#021c48' }}>
+                    {number}
+                  </Typography>
+                </Stack>
+              ))}
+            </Stack>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
