@@ -1,11 +1,13 @@
 import React from 'react'
 import Header from './Header'
+import Footer from './Footer';
+import AboutContent from './About/AboutContent';
 const About = () => {
   return (
     <div>
-        <Header/>
-      <p>About Page whom we are</p>
-      <h1>header</h1>
+        <Header/> 
+      <AboutContent />
+      <Footer/>
     </div>
   )
 }

@@ -1,11 +1,14 @@
 import React from 'react'
 import Header from './Header'
+import Footer from './Footer';
+import ServiceSection from './Service/ServiceSection';
 const Services = () => {
   return (
     <>
     <Header/>
-      <p>Services What de we do</p>
-    </>
+      <ServiceSection/>
+          <Footer/>
+        </>
   )
 }
 

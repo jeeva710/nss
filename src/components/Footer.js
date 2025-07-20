@@ -2,46 +2,175 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone } from 'lucide-react';
 
+const footerStyles = {
+  backgroundColor: '#23272f',
+  color: '#f3f4f6',
+  padding: '3rem 0',
+};
+
+const containerStyles = {
+  maxWidth: '1200px',
+  margin: '0 auto',
+  padding: '0 1rem',
+};
+
+const gridStyles = {
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  gap: '2rem',
+  textAlign: 'center',
+}
+const gridMdStyles = {
+  ...gridStyles,
+  gridTemplateColumns: 'repeat(3, 1fr)',
+  textAlign: 'left',
+}
+
+const sectionStyles = {
+  marginBottom: '1rem',
+};
+
+const headingStyles = {
+  fontSize: '1.25rem',
+  fontWeight: 600,
+  marginBottom: '1rem',
+};
+
+const subHeadingStyles = {
+  fontSize: '1.125rem',
+  fontWeight: 600,
+  marginBottom: '1rem',
+};
+
+const textStyles = {
+  fontSize: '0.875rem',
+  color: 'rgba(243,244,246,0.8)',
+};
+
+const linkStyles = {
+  color: 'rgba(243,244,246,0.8)',
+  fontSize: '0.875rem',
+  textDecoration: 'none',
+  transition: 'color 0.2s',
+  display: 'inline-block',
+};
+
+const linkHoverStyles = {
+  color: '#fbbf24',
+};
+
+const addressStyles = {
+  fontStyle: 'normal',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.5rem',
+  fontSize: '0.875rem',
+  color: 'rgba(243,244,246,0.8)',
+};
+
+const footerBottomStyles = {
+  marginTop: '2.5rem',
+  paddingTop: '2rem',
+  borderTop: '1px solid rgba(243,244,246,0.2)',
+  textAlign: 'center',
+  fontSize: '0.875rem',
+  color: 'rgba(243,244,246,0.6)',
+};
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  // Responsive grid: use 3 columns on desktop, 1 on mobile
+  const isDesktop = window.innerWidth >= 768;
+  const appliedGridStyles = isDesktop ? gridMdStyles : gridStyles;
+
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-          
+    <footer style={footerStyles}>
+      <div style={containerStyles}>
+        <div style={appliedGridStyles}>
           {/* Company Info */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Guardian Services</h3>
-            <p className="text-sm text-primary-foreground/80">
+          <div style={sectionStyles}>
+            <h3 style={headingStyles}>Guardian Services</h3>
+            <p style={textStyles}>
               Your Trusted Security Partner. Providing reliable and professional services to meet your needs.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><Link to="/" className="hover:text-accent transition-colors text-sm text-primary-foreground/80">Home</Link></li>
-              <li><Link to="/services" className="hover:text-accent transition-colors text-sm text-primary-foreground/80">Services</Link></li>
-              <li><Link to="/about" className="hover:text-accent transition-colors text-sm text-primary-foreground/80">About Us</Link></li>
-              <li><Link to="/contact" className="hover:text-accent transition-colors text-sm text-primary-foreground/80">Contact</Link></li>
+          <div style={sectionStyles}>
+            <h4 style={subHeadingStyles}>Quick Links</h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              <li>
+                <Link
+                  to="/"
+                  style={linkStyles}
+                  onMouseOver={e => (e.target.style.color = linkHoverStyles.color)}
+                  onMouseOut={e => (e.target.style.color = linkStyles.color)}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  style={linkStyles}
+                  onMouseOver={e => (e.target.style.color = linkHoverStyles.color)}
+                  onMouseOut={e => (e.target.style.color = linkStyles.color)}
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  style={linkStyles}
+                  onMouseOver={e => (e.target.style.color = linkHoverStyles.color)}
+                  onMouseOut={e => (e.target.style.color = linkStyles.color)}
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  style={linkStyles}
+                  onMouseOver={e => (e.target.style.color = linkHoverStyles.color)}
+                  onMouseOut={e => (e.target.style.color = linkStyles.color)}
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <address className="not-italic space-y-2 text-sm text-primary-foreground/80">
-              <a href="mailto:nssgaran@gmail.com" className="flex items-center justify-center md:justify-start gap-2 hover:text-accent transition-colors">
+          <div style={sectionStyles}>
+            <h4 style={subHeadingStyles}>Contact Us</h4>
+            <address style={addressStyles}>
+              <a
+                href="mailto:nssgaran@gmail.com"
+                style={{ ...linkStyles, display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+                onMouseOver={e => (e.target.style.color = linkHoverStyles.color)}
+                onMouseOut={e => (e.target.style.color = linkStyles.color)}
+              >
                 <Mail size={18} />
                 nssgaran@gmail.com
               </a>
-              <a href="tel:+919443341897" className="flex items-center justify-center md:justify-start gap-2 hover:text-accent transition-colors">
+              <a
+                href="tel:+919443341897"
+                style={{ ...linkStyles, display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+                onMouseOver={e => (e.target.style.color = linkHoverStyles.color)}
+                onMouseOut={e => (e.target.style.color = linkStyles.color)}
+              >
                 <Phone size={18} />
                 +91 94433 41897
               </a>
-              <a href="tel:+918778769855" className="flex items-center justify-center md:justify-start gap-2 hover:text-accent transition-colors">
+              <a
+                href="tel:+918778769855"
+                style={{ ...linkStyles, display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+                onMouseOver={e => (e.target.style.color = linkHoverStyles.color)}
+                onMouseOut={e => (e.target.style.color = linkStyles.color)}
+              >
                 <Phone size={18} />
                 +91 87787 69855
               </a>
@@ -50,7 +179,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-10 pt-8 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/60">
+        <div style={footerBottomStyles}>
           <p>&copy; {currentYear} National Security Service. All rights reserved.</p>
         </div>
       </div>

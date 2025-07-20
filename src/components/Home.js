@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-
+import ImageCarousel from './Heading/ImageCarousel';
+import ActionAreaCard from './Home/ActionAreaCard';
 const Home = () => {
   useEffect(() => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
@@ -11,9 +12,8 @@ const Home = () => {
     <>
       <Header />
       <div style={{ minHeight: '100vh' }}>
-        <p>Home Page</p>
-        <p>neefuieunfewnfe</p>
-        {/* Add more content here to create scroll space */}
+        <ImageCarousel />
+        <ActionAreaCard/>
       </div>
       <Footer />
     </>

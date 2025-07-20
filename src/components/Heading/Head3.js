@@ -11,6 +11,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 
 export default function ResponsiveNavbar() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -21,7 +22,8 @@ export default function ResponsiveNavbar() {
     setDrawerOpen(open);
   };
 
-  const menuItems = ['Home', 'About', 'Services', 'Projects', 'Gallery', 'Contact'];
+  const menuItems = ['Home', 'Who We Are', 'What We Do', 'Licenses', 'Careers', 'Contact Us'];
+  const menuItemsPath = ['/', '/about', '/services', '/licenses', '/careers', '/contact'];
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -32,14 +34,19 @@ export default function ResponsiveNavbar() {
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
               {/* Menu Items on the Left */}
               <Box sx={{ display: 'flex', gap: 3 }}>
-                {menuItems.map((item) => (
-                  <Typography
+                {menuItems.map((item, idx) => (
+                  <Link
                     key={item}
-                    variant="body1"
-                    sx={{ cursor: 'pointer', color: 'white' }}
+                    to={menuItemsPath[idx]}
+                    style={{ textDecoration: 'none' }}
                   >
-                    {item}
-                  </Typography>
+                    <Typography
+                      variant="body1"
+                      sx={{ cursor: 'pointer', color: 'white' }}
+                    >
+                      {item}
+                    </Typography>
+                  </Link>
                 ))}
               </Box>
             </Box>
@@ -69,8 +76,8 @@ export default function ResponsiveNavbar() {
                   onKeyDown={toggleDrawer(false)}
                 >
                   <List>
-                    {menuItems.map((text) => (
-                      <ListItem button key={text}>
+                    {menuItems.map((text, idx) => (
+                      <ListItem button key={text} component={Link} to={menuItemsPath[idx]}>
                         <ListItemText primary={text} />
                       </ListItem>
                     ))}
