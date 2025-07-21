@@ -7,18 +7,18 @@ export default function Test() {
     <Box>
       <BottomNavigation
         sx={{
-          bgcolor: '#efe8e8ff',
+          bgcolor: '#efe8e8f',
           justifyContent: 'flex-start',
-          px: 0.5,       // smaller left/right padding
-          py: 0.2,       // smaller top/bottom padding
-          minHeight: '30px' // reduce component height
+          px: 10,       // smaller left/right padding
+          py: 0,       // smaller top/bottom padding
+          minHeight: '0px' // reduce component height
         }}
       >
         <Stack direction="row" spacing={2} alignItems="center">
           <Stack direction="row" spacing={0.5} alignItems="center">
             <MailIcon htmlColor="#afaaa8ff" fontSize="small" />
             <Typography
-              sx={{ color: '#afaaa8ff', fontSize: '13px', textDecoration: 'none' }}
+              sx={{ color: '#afaaa8ff', fontSize: '18px', textDecoration: 'none' }}
               component="a"
               href="mailto:nssgaran@gmail.com"
             >
@@ -28,7 +28,7 @@ export default function Test() {
           <Stack direction="row" spacing={0.5} alignItems="center">
             <MailIcon htmlColor="#afaaa8ff" fontSize="small" />
             <Typography
-              sx={{ color: '#afaaa8ff', fontSize: '13px', textDecoration: 'none' }}
+              sx={{ color: '#afaaa8ff', fontSize: '18px', textDecoration: 'none' }}
               component="a"
               href="mailto:nss_garan@yahoo.com"
             >

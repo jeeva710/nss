@@ -6,19 +6,29 @@
 //   logoHint: string;
 // }
 
+import bsnlLogo from '../../image/BSNLlogo.png';
+import pglogo from '../../image/pglogo.png';
+import kvlogo from '../../image/kvlogo.png';
+import tvslogo from '../../image/tvslogo.png';
+import Tamilnadulogo from '../../image/Tamilnadulogo.png';
+import icarlogo from '../../image/icarlogo.png';
+import tlogo from '../../image/tlogo.png';
+import ivrcllogo from '../../image/ivrcllogo.png';
+
 const clients = [
-  { name: 'Power Grid Corporation of India', logoSrc: 'https://placehold.co/180x90.png', logoHint: 'power grid logo' },
-  { name: 'BSNL', logoSrc: 'https://placehold.co/150x75.png', logoHint: 'BSNL telecom logo' },
-  { name: 'Kendriya Vidyalaya School', logoSrc: 'https://placehold.co/200x80.png', logoHint: 'school emblem' },
-  { name: 'TVS', logoSrc: 'https://placehold.co/120x60.png', logoHint: 'TVS company logo' },
-  { name: 'Market Committee', logoSrc: 'https://placehold.co/160x70.png', logoHint: 'market committee seal' },
-  { name: 'ICAR', logoSrc: 'https://placehold.co/140x70.png', logoHint: 'ICAR research logo' },
-  { name: 'SSPC', logoSrc: 'https://placehold.co/130x65.png', logoHint: 'SSPC organization logo' },
-  { name: 'Tamil Nadu Tourism', logoSrc: 'https://placehold.co/220x70.png', logoHint: 'tourism department logo' },
-  { name: 'Tamil Nadu Fisheries Department', logoSrc: 'https://placehold.co/240x80.png', logoHint: 'fisheries dept logo' },
-  { name: 'IRI', logoSrc: 'https://placehold.co/140x60.png', logoHint: 'IRI company logo' },
-  { name: 'IVRCL', logoSrc: 'https://placehold.co/150x65.png', logoHint: 'IVRCL company logo' },
-  { name: 'L&T', logoSrc: 'https://placehold.co/100x50.png', logoHint: 'L&T company logo' },
+ 
+  { name: 'Power Grid Corporation of India', logoSrc: pglogo, logoHint: 'power grid logo' },
+  { name: 'BSNL', logoSrc: bsnlLogo, logoHint: 'BSNL telecom logo' },
+  { name: 'Kendriya Vidyalaya School', logoSrc: kvlogo, logoHint: 'school emblem' },
+  { name: 'TVS', logoSrc: tvslogo, logoHint: 'TVS company logo' },
+  { name: 'Market Committee', logoSrc: Tamilnadulogo, logoHint: 'market committee seal' },
+  { name: 'ICAR', logoSrc: icarlogo, logoHint: 'ICAR research logo' },
+  //{ name: 'SSPC', logoSrc: 'https://placehold.co/130x65.png', logoHint: 'SSPC organization logo' },
+  { name: 'Tamil Nadu Tourism', logoSrc: Tamilnadulogo, logoHint: 'tourism department logo' },
+  { name: 'Tamil Nadu Fisheries Department', logoSrc: Tamilnadulogo, logoHint: 'fisheries dept logo' },
+  //{ name: 'IRI', logoSrc: csblogo, logoHint: 'IRI company logo' },
+  { name: 'IVRCL', logoSrc: ivrcllogo, logoHint: 'IVRCL company logo' },
+  { name: 'L&T', logoSrc: tlogo, logoHint: 'L&T company logo' },
 ];
 
 const ActionAreaCard = () => {

@@ -3,6 +3,9 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
 import { Award, FileText as FileBadgeIcon, ShieldCheck, BadgeCheck } from 'lucide-react';
+import isologo from '../../image/isologo.png';
+import msmelogo from '../../image/msmelogo.png';
+import psaralogo from '../../image/indian.png';
 
 const LicensesSection = () => {
   const licenses = [
@@ -10,7 +13,7 @@ const LicensesSection = () => {
       name: "ISO 9001:2015 Certified", 
       description: "Guardian Services is proud to be ISO 9001:2015 certified, demonstrating our commitment to internationally recognized quality management standards. This certification ensures our processes consistently meet client needs and enhance client satisfaction.", 
       Icon: Award, 
-      imagePath: "https://placehold.co/300x200.png",
+      imagePath:isologo,
       imageAlt: "ISO 9001:2015 Certificate",
       imageHint: "ISO certificate quality" 
     },
@@ -18,7 +21,7 @@ const LicensesSection = () => {
       name: "MSME Registered", 
       description: "We are a registered Micro, Small, and Medium Enterprise (MSME) under the Government of India. This registration acknowledges our contribution to the economic growth and development of the nation.", 
       Icon: FileBadgeIcon, 
-      imagePath: "https://placehold.co/300x201.png",
+      imagePath: msmelogo,
       imageAlt: "MSME Registration Certificate",
       imageHint: "MSME document government"
     },
@@ -26,7 +29,7 @@ const LicensesSection = () => {
       name: "PSARA Compliant", 
       description: "Guardian Services operates in full compliance with the Private Security Agencies (Regulation) Act (PSARA). This ensures our security services meet all regulatory requirements, providing reliable and legally compliant security solutions.", 
       Icon: ShieldCheck, 
-      imagePath: "https://placehold.co/300x202.png",
+      imagePath: psaralogo,
       imageAlt: "PSARA License Document",
       imageHint: "PSARA license security"
     },
@@ -66,7 +69,7 @@ const LicensesSection = () => {
                 flexDirection: 'column',
                 background: '#fff',
                 borderRadius: '12px',
-                overflow: 'hidden',
+                overflow: 'contain',
                 minHeight: '420px',
               }}
             >

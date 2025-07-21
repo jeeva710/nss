@@ -1,4 +1,3 @@
-// import Image from 'next/image';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Phone } from 'lucide-react';
@@ -6,6 +5,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
+import karuna from '../../image/karuna.jpg';
 
 const AboutContent = () => {
   const teamMembers = [
@@ -13,22 +13,24 @@ const AboutContent = () => {
       name: 'Mr. Santha Kumar',
       role: 'Manager',
       phone: '+91 70101 66729',
-      imagePath: 'https://placehold.co/200x200.png',
-      imageHint: 'manager portrait',
     },
     {
       name: 'Mr. B. Vignesh',
       role: 'Accountant',
       phone: '+91 94426 59931',
-      imagePath: 'https://placehold.co/200x201.png',
-      imageHint: 'accountant portrait',
     },
   ];
 
   return (
     <section id="about" style={{ padding: '4rem 0', background: '#f6f6f6' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', marginBottom: '4rem' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '3rem',
+          alignItems: 'center',
+          marginBottom: '4rem'
+        }}>
           <div>
             <Typography variant="h3" style={{ fontWeight: 600, marginBottom: '1.5rem', color: '#021c48' }}>
               About National Security Service
@@ -63,16 +65,15 @@ const AboutContent = () => {
             position: 'relative',
             width: '100%',
             maxWidth: '500px',
-            height: '400px',
+            height: '600px',
             borderRadius: '16px',
             overflow: 'hidden',
             boxShadow: '0 8px 32px rgba(0,0,0,0.12)'
           }}>
             <img
-              src="https://placehold.co/600x450.png"
+              src={karuna}
               alt="National Security Service team meeting"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              data-ai-hint="team meeting professional"
+              style={{ width: '100%', height: '100%', objectFit: 'fill' }}
             />
           </div>
         </div>
@@ -99,23 +100,6 @@ const AboutContent = () => {
                   }
                   subheader={member.role}
                   style={{ textAlign: 'center', paddingTop: '1.5rem' }}
-                  avatar={
-                    <div style={{
-                      width: '96px',
-                      height: '96px',
-                      margin: '0 auto 1rem',
-                      borderRadius: '50%',
-                      overflow: 'hidden',
-                      border: '2px solid #021c48'
-                    }}>
-                      <img
-                        src={member.imagePath}
-                        alt={`${member.name}, ${member.role}`}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                        data-ai-hint={member.imageHint}
-                      />
-                    </div>
-                  }
                 />
                 <CardContent style={{ textAlign: 'center', paddingBottom: '1.5rem' }}>
                   {member.phone && (

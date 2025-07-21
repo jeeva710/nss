@@ -28,7 +28,7 @@ export default function ResponsiveNavbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: '#021c48ff' }}>
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Toolbar sx={{ display: 'flex',  justifyContent: 'center' }}>
           {!isMobile ? (
             // Desktop View: Show only menu items, no title
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
