@@ -1,87 +1,131 @@
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-//import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import Security from '../../image/Security.png'
+import Button from '@mui/material/Button';
+import { Box } from '@mui/material';
+import {
+  Security,
+  CleaningServices,
+  DriveEta,
+  Restaurant,
+  Nature,
+  Build,
+  Grass,
+  Construction,
+  Agriculture
+} from '@mui/icons-material';
+
+const services = [
+  {
+    title: "Security Guard Services",
+    icon: <Security sx={{ fontSize: 60, color: '#021c48' }} />,
+    description: `Comprehensive security solutions with trained professionals.`,
+  },
+  {
+    title: "Housekeeping Services",
+    icon: <CleaningServices sx={{ fontSize: 60, color: '#021c48' }} />,
+    description: `Reliable cleaning services for homes and businesses.`,
+  },
+  {
+    title: "Driver Services",
+    icon: <DriveEta sx={{ fontSize: 60, color: '#021c48' }} />,
+    description: `Safe and dependable transportation for all your needs.`,
+  },
+  {
+    title: "Cook Services",
+    icon: <Restaurant sx={{ fontSize: 60, color: '#021c48' }} />,
+    description: `Expert culinary services for events and personal dining.`,
+  },
+  {
+    title: "Tree Cutting Services",
+    icon: <Nature sx={{ fontSize: 60, color: '#021c48' }} />,
+    description: `Professional tree trimming, removal, and stump grinding.`,
+  },
+  {
+    title: "AMC Services",
+    icon: <Build sx={{ fontSize: 60, color: '#021c48' }} />,
+    description: `Asset maintenance contracts for optimal performance.`,
+  },
+  {
+    title: "Horticulture Services",
+    icon: <Grass sx={{ fontSize: 60, color: '#021c48' }} />,
+    description: `Expert landscaping and garden maintenance services.`,
+  },
+  {
+    title: "Excavator Operator Services",
+    icon: <Construction sx={{ fontSize: 60, color: '#021c48' }} />,
+    description: `Skilled operators for excavation and earthmoving tasks.`,
+  },
+  {
+    title: "Field Farm Operator Services",
+    icon: <Agriculture sx={{ fontSize: 60, color: '#021c48' }} />,
+    description: `Experienced operators for agricultural operations.`,
+  }
+];
 
 const ServiceSections = () => {
-  const cardData = [
-    {
-      title: "Security Guard Services",
-      description: `We offer a comprehensive range of security guard services to meet your security needs.
-
-Key Offerings:
-• Armed Security Guards
-• Unarmed Security Guards
-• Event Security
-• Residential Security
-• Commercial Security
-Our professionally trained security personnel are committed to ensuring your safety and security. We hold industry certifications and licenses, and our team has a proven track record of success in safeguarding our clients' interests.`,
-      image: Security
-    },
-    {
-      title: "Housekeeping Services",
-      description: "We provide professional housekeeping services for residential and commercial premises, ensuring cleanliness, hygiene, and a welcoming environment.",
-      image: "/static/images/cards/contemplative-reptile.jpg"
-    },
-    {
-      title: "Driver Services",
-      description: "Trained and verified drivers for personal or business travel. Safe, punctual, and professional on all road types and trip durations.",
-      image: "/static/images/cards/contemplative-reptile.jpg"
-    }
-  ];
-
   return (
-    <Box sx={{ background: '#f6f6f6', py: 5 }}>
-      <Box sx={{ maxWidth: '1200px', margin: '0 auto', px: 2 }}>
-        <Typography variant="h4" align="center" sx={{ color: '#021c48', fontWeight: 600, mb: 2 }}>
+    <Box sx={{ background: '#f6f6f6', py: 6 }}>
+      <Box sx={{ maxWidth: 1200, mx: 'auto', px: 2 }}>
+        <Typography variant="h4" sx={{ textAlign: 'center', fontWeight: 600, color: '#021c48', mb: 2 }}>
           Our Services
         </Typography>
-        <Typography variant="body1" align="center" sx={{ color: '#555', mb: 5, maxWidth: 600, mx: 'auto' }}>
+        <Typography variant="body1" sx={{ textAlign: 'center', color: '#555', mb: 5, maxWidth: 600, mx: 'auto' }}>
           Discover a wide range of professional services tailored to meet your specific needs. We are committed to excellence and client satisfaction.
         </Typography>
 
-        <Grid container spacing={4}>
-          {cardData.map((card, idx) => (
-            <Grid item xs={12} key={idx}>
+        <Grid container spacing={4} justifyContent="center">
+          {services.map((service, idx) => (
+            <Grid item key={idx} xs={12} sm={6} md={4}>
               <Card
                 sx={{
+                  width: 360,
+                  //height: 420,
                   display: 'flex',
-                  flexDirection: { xs: 'column', sm: 'row' },
-                  backgroundColor: '#fff',
-                  borderRadius: 3,
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
                   boxShadow: 3,
-                  overflow: 'hidden'
-                   
+                  borderRadius: 3,
+                  p: 2,
+                  background: '#fff'
                 }}
               >
-                <CardMedia
-                  component="img"
-                  image={card.image}
-                  alt={card.title}
-                  sx={{
-                    width: { xs: '100%', sm: 300 },
-                    height: { xs: 250, sm: '100%' },
-                    objectFit: 'cover'
-                  }}
-                />
-                <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-                  <CardContent sx={{ p: 3 }}>
-                    <Typography variant="h5" sx={{ color: '#021c48', fontWeight: 600, mb: 1 }}>
-                      {card.title}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{ color: '#555', whiteSpace: 'pre-line', textAlign: 'left' }}
-                    >
-                      {card.description}
-                    </Typography>
-                  </CardContent>
-                 
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mb: 1 }}>
+                  {service.icon}
                 </Box>
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography variant="h6" sx={{ color: '#021c48', fontWeight: 600, textAlign: 'center', mb: 1 }}>
+                    {service.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: '#555',
+                      whiteSpace: 'pre-line',
+                      textAlign: 'center'
+                    }}
+                  >
+                    {service.description}
+                  </Typography>
+                </CardContent>
+                <Button
+                  variant="contained"
+                  sx={{
+                    mt: 2,
+                    backgroundColor: '#ffffffff',
+                    color: '#021c48',
+                    fontWeight: 600,
+                    textTransform: 'none',
+                    '&:hover': {
+                      backgroundColor: '#d6d6d6ff'
+                    }
+                  }}
+                  onClick={() => alert(`View details for ${service.title}`)}
+                >
+                  View Details
+                </Button>
               </Card>
             </Grid>
           ))}
