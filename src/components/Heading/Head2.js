@@ -20,6 +20,7 @@ export default function Head2() {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'flex-start',
+            
           }}
         >
           {/* Left Section - Logo + Title */}
@@ -28,7 +29,7 @@ export default function Head2() {
               component="img"
               src={nsslogo} // Replace with actual image
               alt="Sample"
-              sx={{ width: 200, height: 'auto', borderRadius: 2, mr: 2 }}
+              sx={{ width: 120, height: 'auto', borderRadius: 2, mr: 2, }}
             />
             <Box>
               <Typography

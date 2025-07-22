@@ -9,7 +9,7 @@ export default function Test() {
         sx={{
           bgcolor: '#efe8e8f',
           justifyContent: 'flex-start',
-          px: 10,       // smaller left/right padding
+          px: 20 ,       // smaller left/right padding
           py: 0,       // smaller top/bottom padding
           minHeight: '0px' // reduce component height
         }}
