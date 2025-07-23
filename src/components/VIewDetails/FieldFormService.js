@@ -1,24 +1,18 @@
 import { Card, CardContent, CardHeader, Button, Typography, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import FieldImg from '../../image/Field.png';
 
 const ExcavatorOperatorService = () => (
   <Box component="section" sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#f7f7f7' }}>
     <Box sx={{ maxWidth: '1200px', mx: 'auto', px: 2 }}>
       <Card sx={{ overflow: 'hidden', boxShadow: 6 }}>
-        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, position: 'relative' }}>
           {/* 🚜 Left Image Section */}
-          <Box
-            sx={{
-              position: 'relative',
-              flex: 1,
-              minHeight: { xs: 350, md: 450 },
-              overflow: 'hidden',
-            }}
-          >
+          <Box sx={{ width: { xs: '100%', md: '50%' }, display: 'flex', flexDirection: 'column' }}>
             <Box
               component="img"
-              src="/images/excavator.jpg"
-              alt="Excavator Operator Services"
+              src={FieldImg}
+              alt="Field Services"
               sx={{
                 width: '100%',
                 height: '100%',
@@ -27,10 +21,15 @@ const ExcavatorOperatorService = () => (
                 '&:hover': { transform: 'scale(1.05)' },
               }}
             />
+           
+            {/* Optional overlay — usually goes inside a container with position: relative */}
             <Box
               sx={{
                 position: 'absolute',
-                inset: 0,
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
                 background: 'linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.05))',
               }}
             />

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, Button, Typography, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import TreeImg from '../../image/Tree.png';
 
 const TreeCuttingService = () => (
   <Box component="section" sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#f7f7f7' }}>
@@ -10,8 +11,8 @@ const TreeCuttingService = () => (
           <Box sx={{ position: 'relative', flex: 1, minHeight: { xs: 350, md: 450 }, overflow: 'hidden' }}>
             <Box
               component="img"
-              src="https://lh3.googleusercontent.com/kqp-5qUkt9WhrkS96pXcaALwUHbyRFXzDguHvJsnOdVO0CS8Z61tYzzUBEpt_R6TE_FJ9L93=w3176"
-              alt="Tree Cutting Services"
+              src={TreeImg}
+              alt="Tree Services"
               sx={{
                 width: '100%',
                 height: '100%',

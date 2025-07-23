@@ -4,6 +4,7 @@ import CardHeader from '@mui/material/CardHeader';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { Typography, Box } from '@mui/material';
+import SecurityImg from '../../image/Security.png';
 
 const SecurityGuardServiceCard = () => {
   return (
@@ -22,16 +23,14 @@ const SecurityGuardServiceCard = () => {
             >
               <Box
                 component="img"
-                src="https://wallpapercave.com/wp/wp7022779.jpg"
-                alt="Security Guard Service"
+                src={SecurityImg}
+                alt="Security Services"
                 sx={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
                   transition: 'transform 0.5s',
-                  '&:hover': {
-                    transform: 'scale(1.05)',
-                  },
+                  '&:hover': { transform: 'scale(1.05)' },
                 }}
               />
               <Box

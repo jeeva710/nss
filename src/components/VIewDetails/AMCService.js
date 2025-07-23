@@ -1,5 +1,8 @@
+
 import { Card, CardContent, CardHeader, Button, Typography, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import amcImg from '../../image/AMC.png';
+
 
 const AMCServiceCard = () => (
   <Box component="section" sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#f7f7f7' }}>
@@ -10,7 +13,7 @@ const AMCServiceCard = () => (
           <Box sx={{ position: 'relative', flex: 1, minHeight: { xs: 350, md: 450 }, overflow: 'hidden' }}>
             <Box
               component="img"
-              src="https://www.swift-india.com/blog/wp-content/uploads/2021/07/AMC.png"
+              src={amcImg}
               alt="AMC Services"
               sx={{
                 width: '100%',

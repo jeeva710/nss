@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, Button, Typography, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import HorticultureImg from '../../image/Horticulture.png';
 
 const HorticultureService = () => (
   <Box component="section" sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#f7f7f7' }}>
@@ -10,7 +11,7 @@ const HorticultureService = () => (
           <Box sx={{ position: 'relative', flex: 1, minHeight: { xs: 350, md: 450 }, overflow: 'hidden' }}>
             <Box
               component="img"
-              src="https://th.bing.com/th/id/OIP.eLVGoI05jJSAulsitqVrhAHaE8?w=268&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+              src={HorticultureImg}
               alt="Horticulture Services"
               sx={{
                 width: '100%',

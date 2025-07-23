@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, Button, Typography, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import cookImg from '../../image/Cook.png';
 
 const CookingService = () => (
   <Box component="section" sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#f7f7f7' }}>
@@ -10,8 +11,8 @@ const CookingService = () => (
           <Box sx={{ position: 'relative', flex: 1, minHeight: { xs: 350, md: 450 }, overflow: 'hidden' }}>
             <Box
               component="img"
-              src="https://media.istockphoto.com/id/1497181820/photo/cooking-under-the-guidance-of-seasoned-chefs-at-a-culinary-schools-kitchen.webp?a=1&b=1&s=612x612&w=0&k=20&c=up_i6tuEhKqVNb7G2iy7ILvnUwQz8I3ANAaoX11C8Ss="
-              alt="Cooking Services"
+              src={cookImg}
+              alt="Cook Services"
               sx={{
                 width: '100%',
                 height: '100%',

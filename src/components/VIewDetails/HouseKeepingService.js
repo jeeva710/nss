@@ -4,6 +4,7 @@ import CardHeader from '@mui/material/CardHeader';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { Typography, Box } from '@mui/material';
+import HousekeepingImg from '../../image/Housekeeping.png';
 
 const HousekeepingServiceCard = () => {
   return (
@@ -21,19 +22,17 @@ const HousekeepingServiceCard = () => {
               }}
             >
               <Box
-                component="img"
-                src="https://th.bing.com/th/id/OIP.i-jrqi7ZLhBJ5hHkWdX-BgHaEK?w=333&h=187&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" // Replace with your actual image path
-                alt="Housekeeping Service"
-                sx={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  transition: 'transform 0.5s',
-                  '&:hover': {
-                    transform: 'scale(1.05)',
-                  },
-                }}
-              />
+                            component="img"
+                            src={HousekeepingImg}
+                            alt="Housekeeping Services"
+                            sx={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover',
+                              transition: 'transform 0.5s',
+                              '&:hover': { transform: 'scale(1.05)' },
+                            }}
+                          />
               <Box
                 sx={{
                   position: 'absolute',
