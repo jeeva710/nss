@@ -5,7 +5,7 @@ import ImageCarousel from './Heading/ImageCarousel';
 import ActionAreaCard from './Home/ActionAreaCard';
 const Home = () => {
   useEffect(() => {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
 
   return (
